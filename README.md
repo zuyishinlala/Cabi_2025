@@ -10,11 +10,18 @@ location density, and optionally loading the filtered CSV into PostgreSQL.
 - `python-dotenv` (needed only by `UploadData.py`)
 - PostgreSQL command-line tools, including `psql` (needed only by `UploadData.py`)
 
-Install the optional Python dependency with:
+Create and activate a virtual environment from the repository root, then install
+the pinned Python dependencies:
 
 ```bash
-python -m pip install python-dotenv
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 ```
+
+On Windows, activate the environment with `.venv\Scripts\activate` instead.
+The `.venv/` directory is local to your machine and excluded from version
+control. `python-dotenv` is only used when uploading data to PostgreSQL.
 
 ## Input data
 
